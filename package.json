@@ -1,0 +1,22 @@
+{
+    "name": "shinoko",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "dependencies": {
+        "@consumet/extensions": "^1.7.0",
+        "nuxt": "^3.13.0",
+        "vue": "latest"
+    },
+    "devDependencies": {
+        "@nuxt/fonts": "^0.7.2",
+        "@nuxt/image": "^1.7.0",
+        "@nuxt/ui": "^2.18.4"
+    }
+}
