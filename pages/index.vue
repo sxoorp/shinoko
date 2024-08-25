@@ -1,8 +1,10 @@
 <script lang="ts" setup>
+import type { MangaResponse } from "~/types/manga";
+
 const { data } = await useAsyncData(async () => {
     const [latest, popular] = await Promise.all([
-        await $fetch("/api/latest"),
-        await $fetch("/api/popular")
+        await $fetch<MangaResponse>("/api/latest"),
+        await $fetch<MangaResponse>("/api/popular")
     ]);
     
     return { latest, popular }
