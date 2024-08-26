@@ -21,7 +21,6 @@ const regex = [
 </script>
 
 <template>
-
     <Head>
         <Title>{{ data?.info.title ? data?.info.title :
             (data?.info.altTitles[0].en ? data?.info.altTitles[0].en : data?.info.altTitles[0].ja) }}</Title>
@@ -59,6 +58,7 @@ const regex = [
                 {{ data?.info.description.en.replace(/---\s+\*\*Links:\*\*[\s\S]*$/, "").trim() }}</p>
             <p class="text-base font-normal" v-else-if="regex[1].test(data?.info.description.en as string)">
                 {{ data?.info.description.en.replace(/---\s+\*\*Notes:\*\*[\s\S]*$/, "").trim() }}</p>
+            <p class="text-base font-normal" v-else>{{ data?.info.description.en }}</p>
         </div>
     </div>
 
