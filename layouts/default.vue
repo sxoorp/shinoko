@@ -1,6 +1,3 @@
-<script lang="ts" setup>
-</script>
-
 <template>
     <Head>
         <Meta name="description"
@@ -8,5 +5,6 @@
         <Meta name="keywords" content="Shinoko, Shinoko Manga, Manga Shinoko, Read Manga, Browse Manga" />
     </Head>
     <NuxtLoadingIndicator color="#14B8A6" />
+    <Header />
     <slot />
 </template>
