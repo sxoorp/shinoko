@@ -13,9 +13,15 @@ const { data } = await useAsyncData(async () => {
 
     return { info, recent }
 });
+
+const regex = [
+    /---\s+\*\*Links:\*\*[\s\S]*$/,
+    /---\s+\*\*Notes:\*\*[\s\S]*$/
+]
 </script>
 
 <template>
+
     <Head>
         <Title>{{ data?.info.title ? data?.info.title :
             (data?.info.altTitles[0].en ? data?.info.altTitles[0].en : data?.info.altTitles[0].ja) }}</Title>
@@ -49,8 +55,10 @@ const { data } = await useAsyncData(async () => {
             <div class="flex flex-wrap items-center gap-2">
                 <UButton v-for="genre in data?.info.genres" variant="soft">{{ genre }}</UButton>
             </div>
-            <p class="text-base font-normal">
+            <p class="text-base font-normal" v-if="regex[0].test(data?.info.description.en as string)">
                 {{ data?.info.description.en.replace(/---\s+\*\*Links:\*\*[\s\S]*$/, "").trim() }}</p>
+            <p class="text-base font-normal" v-else-if="regex[1].test(data?.info.description.en as string)">
+                {{ data?.info.description.en.replace(/---\s+\*\*Notes:\*\*[\s\S]*$/, "").trim() }}</p>
         </div>
     </div>
 
