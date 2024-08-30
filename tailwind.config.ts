@@ -1,15 +1,12 @@
-/** @type {import("tailwindcss").Config} */
-
-module.exports = {
+export default {
     content: [
-        "./components/**/*.vue",
         "./layouts/**/*.vue",
-        "./pages/**/*.vue"
+        "./pages/**/*.vue",
+        "./components/**/*.vue"
     ],
     theme: {
         fontFamily: {
             sans: ["Outfit", "sans-serif"]
         }
-    },
-    plugins: []
+    }
 }
