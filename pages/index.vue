@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { MangaResponse } from "~/interfaces/manga";
+import type { MangaResponse } from "~/types/manga";
 
 const { data } = await useAsyncData(async () => {
     const [latest, popular] = await Promise.all([

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ChapterResponse } from "~/interfaces/chapter";
+import type { ChapterResponse } from "~/types/chapter";
 
 const { id } = useRoute().params
 const open = ref(false);

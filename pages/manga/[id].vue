@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type { InfoResponse } from "~/interfaces/info";
-import type { MangaResponse } from "~/interfaces/manga";
+import type { InfoResponse } from "~/types/info";
+import type { MangaResponse } from "~/types/manga";
 
 const { id } = useRoute().params
 const open = ref(false);
