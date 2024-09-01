@@ -1,22 +1,12 @@
 <script lang="ts" setup>
 import type { MangaResponse } from "~/types/manga";
-
-const { data } = await useAsyncData(async () => {
-    const [latest, popular] = await Promise.all([
-        await $fetch<MangaResponse>("/api/latest"),
-        await $fetch<MangaResponse>("/api/popular")
-    ]);
-    
-    return { latest, popular }
-});
+const { data } = await useFetch<MangaResponse>("/api/popular", { query: { page: 1, per: 16 } });
 </script>
 
 <template>
     <Head>
         <Title>Shinoko - Enjoy Reading Manga Online</Title>
     </Head>
-    <Headline label="Latest Updates" />
-    <Cards :data="data?.latest.results" />
     <Headline label="Popular Titles" />
-    <Cards :data="data?.popular.results" />
+    <Cards :data="data?.results" />
 </template>
