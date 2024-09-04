@@ -1,4 +1,5 @@
 <template>
+    <UDivider />
     <UContainer as="div" class="flex justify-between items-center p-4">
         <UContainer as="div" class="flex items-center gap-2">
             <p class="text-base font-normal">Made with</p>

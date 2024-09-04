@@ -21,7 +21,6 @@ const regex = [
 </script>
 
 <template>
-
     <Head>
         <Title>{{ data?.info.title ? data?.info.title :
             (data?.info.altTitles[0].en ? data?.info.altTitles[0].en : data?.info.altTitles[0].ja) }}</Title>
@@ -67,10 +66,8 @@ const regex = [
             </UCard>
         </UContainer>
     </UContainer>
-
     <Headline label="Recently Added" />
     <Cards :data="data?.recent.results" />
-
     <USlideover v-model="open">
         <UContainer as="div" class="space-y-4 p-4 flex-1 overflow-y-auto h-full">
             <UContainer as="div" class="flex justify-between items-center">
@@ -78,7 +75,8 @@ const regex = [
                 <UButton icon="i-heroicons-x-mark-solid" color="white" @click="open = false" />
             </UContainer>
             <UContainer as="div" class="grid grid-cols-2 gap-2">
-                <UButton v-for="chapter in data?.info.chapters" :to="'/read/' + chapter.id" variant="soft" block
+                <UButton v-for="chapter in data?.info.chapters"
+                    :to="`/read/${id}/${chapter.id}/${chapter.chapterNumber}`" variant="soft" block
                     v-if="data?.info.chapters.length! > 0">Chapter {{ chapter.chapterNumber }}</UButton>
             </UContainer>
         </UContainer>

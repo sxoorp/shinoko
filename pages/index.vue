@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { MangaResponse } from "~/types/manga";
-const { data } = await useFetch<MangaResponse>("/api/popular", { query: { page: 1, per: 16 } });
+const { data } = await useFetch<MangaResponse>("/api/popular", { query: { page: 1, per: 32 } });
 </script>
 
 <template>
